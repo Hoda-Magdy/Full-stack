@@ -1,0 +1,21 @@
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note right of browser: User types a note in the input field and clicks "Save"
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    Note right of server: Server processes and saves the new note
+    server-->>browser: Response { "message": "note saved successfully" }
+    deactivate server
+
+    Note right of browser: The browser updates the note list dynamically without reloading
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: Updated list of notes including the new note
+    deactivate server
+
+    Note right of browser: JavaScript renders the new note on the page instantly
