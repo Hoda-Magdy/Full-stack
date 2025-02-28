@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(morgan('tiny'));
 app.use(cors());
+app.use(express.static('dist'));
+
 
 let persons = [
   { id: 1, name: 'John Doe', number: '123-456-7890' },

@@ -2,11 +2,13 @@
   "name": "notebackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": " dist/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+     "build:ui": "rm -rf dist && cd C:/Users/Hoda%20Hussein/frontendFS && npm run build && cp -r dist C:/Users/Hoda%20Hussein/backendFS",
+    "deploy:full": "npm run build:ui && cd C:/Users/Hoda%20Hussein/backendFS && git add . && git commit -m 'uibuild' && git push"
   },
   "author": "",
   "license": "ISC",
